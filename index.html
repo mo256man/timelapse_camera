@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Fredoka+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/ja.js"></script>
+<script type="text/javascript" src="script.js" defer="defer"></script>
+<title>Mo's camera</title>
+</head>
+<body>
+<table>
+<img src="mo.png"><span class="title">'s camera</span><br>
+<br>
+<div class="center">
+    <span class="menu" id="btnCamera"><img src="icon_camera.png" class="menubtn" onclick="changeMode(0)"></span>
+    <span class="menu" id="btnTimeShift"><img src="icon_time.png" class="menubtn" onclick="changeMode(1)"></span>
+    <span class="menu" id="btnMovie"><img src="icon_movie.png" class="menubtn" onclick="changeMode(2)"></span>
+</div>
+<div class="center">
+    <div id="div_now">
+        <span class="frame message"></span>
+    </div>
+    <div id="div_time">
+        <span class="frame button" onclick="timeShift(-1, 'd')" id="-1d">-1d</span>
+        <span class="frame button" onclick="timeShift(-1, 'h')" id="-1H">-1H</span>
+        <span class="frame button" onclick="timeShift(-1, 'u')" id="-1u">-1u</span>
+        <span class="frame button" onclick="timeShift(0, '')" id="now">■</span>
+        <span class="frame button" onclick="timeShift(1, 'u')" id="+1u">+1u</span>
+        <span class="frame button" onclick="timeShift(1, 'h')" id="+1H">+1H</span>
+        <span class="frame button" onclick="timeShift(1, 'd')" id="+1d">+1d</span>
+    </div>
+    <div id="div_movie">
+        <span class="frame button" onclick="setLapse('1d')" id="1d">1d</span>
+        <span class="frame button" onclick="setLapse('1H')" id="1H">1H</span>
+        <span class="frame button" onclick="setLapse('1u')" id="1u">1u</span>
+        <span class="frame button" onclick="playMovie()" id="movie">▶</span>
+    </div>
+</div>
+<div class="center">
+    <span class="timetitle" id="timetitle"></span> 
+    <span class="datetime" id="datetime"></span>
+</div>
+<div class="center">
+    <img id="image">
+</div>
+<div class="center">
+    <span class="hidden">
+        mode=<span id="mode">0</span>, 
+        latestFileName=<span id="hidden_latest"></span>, 
+        lapseValue=<span id="lapseValue"></span>, 
+        lapseUnit=<span id="lapseUnit"></span>, 
+        now=<span id="hidden_clock"></span>
+    </span>
+</div>
+</body>
+</html>
