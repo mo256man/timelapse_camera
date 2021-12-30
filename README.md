@@ -10,11 +10,12 @@
 **ラズパイ**  
 　├ camera.py  
 　└ imagesフォルダを作っておく  
-
+　　└（latest.jpgが作られる）  
+  
 **サーバーにアップロード**  
 　├ index.html  
 　├ script.js  
 　├ style.css  
-　├ アイコン画像 
-　└ imagesフォルダ
+　├ アイコン画像  
+　└ imagesフォルダ  
 　　└no_image.jpg  
