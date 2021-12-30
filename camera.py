@@ -85,9 +85,9 @@ def main():
 
     print("next:", dt_next)
     while True:
+        dt_now = datetime.datetime.now()                        # 現在日時
         ret, frame = cap.read()                                 # カメラ映像を取得する
         if ret:                                                 # 撮影に成功していたら
-            dt_now = datetime.datetime.now()                    # 現在日時
             if getattr(dt_now, "minute") != last_minute:        # 分が変わったら（1分に1回実行する）
                 str_time = dt_now.strftime("%Y/%m/%d %H:%M")    # テキスト
                 frame = draw_text(frame, str_time)              # テキストを画像に書き込む
@@ -107,10 +107,10 @@ def main():
                 if key == 27:
                     break
 
-            else:
-                print("no image")
+        else:
+            print("no image")
 
-            last_minute = getattr(dt_now, "minute")             # 分を更新
+        last_minute = getattr(dt_now, "minute")             # 分を更新
 
     cv2.destroyAllWindows()
 
